@@ -22,7 +22,11 @@ const tabOver= [
    Les variables
  */
 
-/*table dynamique au début du jeu*/
+/**
+ * Tableau dynamique au début du jeu
+ *
+ * @author          Yassine Zitouni
+ */
 let tabGame= [
     [0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0],
@@ -71,6 +75,7 @@ function generateArray(){
 	for (let i = 0 ; i < 4 ; i++){
 		for (let j = 0 ; j < 7 ; j++){
 			let end = false;
+			//tant que nous avons pas deux fois la même image
 			while (!end && (nbImagePosition.includes(0) === true) || (nbImagePosition.includes(1) === true)){
 				let ramdomImage = Math.floor(Math.random() * 14);
 				if (nbImagePosition[ramdomImage] < 2){
@@ -81,7 +86,6 @@ function generateArray(){
 			}
 		}
 	}
-
 	/*
 			J'ajoute ce que j'ai que j'ai récupéré de manière aléatoire
 	 */
@@ -92,7 +96,6 @@ function generateArray(){
 			cmpt++;
 		}
 	}
-
 	return ramdomGame;
 }
 
@@ -108,7 +111,6 @@ function displayArray(){
         for (let j = 0; j < tabGame[i].length; j++){
             if(tabGame[i][j] === 0){
                 txt += "<img src='http://localhost/oclock/vendor/game/blank.png' class='m-2' style='width: 100px; height: 100px ; margin: 5px' onClick='verif(\""+i+"-"+j+"\")'></img>";
-                //txt += "<button class='btn btn-primary' style='width: 100px; height: 100px ; margin: 4px' onClick='verif(\""+i+"-"+j+"\")'>Afficher</button>";
             }
             else{
                 txt += "<img src='"+ getImage(tabGame[i][j])+"' class='m-2' style='width: 107px; height: 100px'></img>";
@@ -215,7 +217,7 @@ function winner(a, b) {
 	if(JSON.stringify(tabGame) === JSON.stringify(tabResult)){
 		points++;
 		//On donne un point
-		alert("win");
+		alert("Bravo !");
 		divRestult.style.display = 'none';
 		completeBar.style.display = 'none';
 		completeBar.style.display = 'none';
@@ -290,7 +292,7 @@ function scorePost(){
 		data : { score : interval, pseudo: pseudo },// passing the values
 		success: function(res){
 			//do what you want here...
-			alert(res);
+			//alert(res);
 		}
 	});
 }
