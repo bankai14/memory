@@ -18,3 +18,6 @@ plateau.
 
 ● Chaque temps de partie effectuée doit être sauvegardée en base de données.
 Avant le début du jeu, les meilleurs temps s’affichent à l’écran.
+
+![image](https://user-images.githubusercontent.com/12949266/163209616-14837ac2-81f0-45e4-a582-8205cc90d68c.png)
+
