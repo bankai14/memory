@@ -1,5 +1,8 @@
 # Projet
 Il s'agit du jeu Memory.
+
+![image](https://user-images.githubusercontent.com/12949266/163209337-9b30bea8-24a0-48ff-a05a-8abb35795426.png)
+
 # Fonctionnalités
 
 ● Au commencement du jeu, des cartes sont disposées face cachée à l'écran.
