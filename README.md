@@ -21,3 +21,18 @@ Avant le début du jeu, les meilleurs temps s’affichent à l’écran.
 
 ![image](https://user-images.githubusercontent.com/12949266/163209616-14837ac2-81f0-45e4-a582-8205cc90d68c.png)
 
+# Installation
+
+1. Cloner le projet.
+2. Avoir un wamp (« Windows » « Apache » « MySQL » « PHP ») ou lamp pour Linux
+3. Récupérer le fichier .sql dans : vendor/sql/memory.sql et rajouter les tables.
+4. Paramétrer l'authentification avec la BDD dans : application/config/database.php :
+
+```
+'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => 'root',
+	'database' => 'oclock',
+	```
+4. L'installation est terminé se rendre sur : http://localhost/memory/
+
