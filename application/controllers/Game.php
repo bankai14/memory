@@ -13,6 +13,11 @@ class Game extends CI_Controller {
 		date_default_timezone_set('Europe/Paris');
 	}
 
+	/**
+	 * Cette fonction a pour objectif d'ajouter un pseudo et lancer le jeu
+	 *
+	 * @author          Yassine Zitouni
+	 */
 	public function index()
 	{
 		$this->load->helper(array('form', 'url'));
@@ -33,6 +38,11 @@ class Game extends CI_Controller {
 		}
 	}
 
+	/**
+	 * Cette fonction a pour objectif d'ajouter un score
+	 *
+	 * @author          Yassine Zitouni
+	 */
 	public function addScore()
 	{
 		$tableSetup = array(
@@ -45,6 +55,11 @@ class Game extends CI_Controller {
 		echo($this->input->post("score"));
 	}
 
+	/**
+	 * Cette fonction a pour objectif de récupérer les scores
+	 *
+	 * @author          Yassine Zitouni
+	 */
 	public function getScore()
 	{
 		$this->load->helper(array('form', 'url'));

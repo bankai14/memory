@@ -33,10 +33,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="form-group">
 								<input name="btnForget" class="btn btn-lg btn-primary btn-block btnForget" value="Jouer" type="submit">
 							</div>
+						<a href="#scores"><input class="btn btn-lg btn-primary btn-block btnForget" value="Les scores"></a>
 						</form>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="row mb-4">
+		<div class="col-12 text-center pt-3">
+			<h1 id="scores">Le tableau des scores</h1>
+		</div>
+	</div>
+	<div class="row justify-content-md-center mb-4">
+		<div class="col-md-12">
+
+			<!--start code-->
+			<div class="widget">
+				<!-- widget content -->
+				<table class="table small mb-5">
+					<thead class="thead-light">
+					<tr>
+						<th scope="col"></th>
+						<th scope="col">Pseudo</th>
+						<th scope="col">Score</th>
+						<th scope="col">Date</th>
+					</tr>
+					</thead>
+					<tbody>
+					<?php foreach($scores as $key => $score) { ?>
+					<tr class="bg-success text-white">
+						<th scope="col"><?php echo $key + 1 ?></th>
+						<th scope="col"><?php echo $score['Pseudo'] ?></th>
+						<th scope="col"><?php echo 120 - $score['Score'] . 's' ?></th>
+						<th scope="col"><?php echo $score['Date'] ?></th>
+					</tr>
+					</tbody>
+					<?php }?>
+				</table>
+				<div class="gap-0"></div>
+			</div>
+			<!--end code-->
+
 		</div>
 	</div>
 </div>

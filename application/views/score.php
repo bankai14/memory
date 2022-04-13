@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>Game O'clock</title>
@@ -21,7 +21,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row mb-4">
 		<div class="col-12 text-center pt-3">
 			<h1>Le tableau des scores</h1>
-			<h4>TOP 5</h4>
 		</div>
 	</div>
 

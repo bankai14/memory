@@ -2,7 +2,6 @@
    Les constantes
  */
 const divRestult = document.querySelector("#result");
-const pseudoGame = document.querySelector("pseudoGame");
 const progressBar = document.querySelector(".progress-inner");
 const timeSpan = document.querySelector(".time");
 const timeFinal = document.querySelector(".timeFinal");
@@ -54,6 +53,11 @@ displayArray();
    *************************************
  */
 
+/**
+ * Générer un tableau de manière aléatoire
+ *
+ * @author          Yassine Zitouni
+ */
 function generateArray(){
 	let nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	let ramdomGame = [
@@ -92,7 +96,11 @@ function generateArray(){
 	return ramdomGame;
 }
 
-
+/**
+ * Cette fonction a pour objectif d'afficher le tableau à l'écran
+ *
+ * @author          Yassine Zitouni
+ */
 function displayArray(){
     let txt = "";
     for (let i = 0; i < tabGame.length; i++){
@@ -111,6 +119,11 @@ function displayArray(){
     divRestult.innerHTML = txt;
 }
 
+/**
+ * Cette fonction a pour objectif de récupérer les cartes
+ *
+ * @author          Yassine Zitouni
+ */
 function getImage(valeur){
     let image = "http://localhost/oclock/vendor/game/";
     switch (valeur){
@@ -154,6 +167,11 @@ function getImage(valeur){
     return image;
 }
 
+/**
+ * Cette fonction a pour objectif de savoir s'il y'a un match
+ *
+ * @author          Yassine Zitouni
+ */
 function verif(bouton){
     /* Je lance le temps de manière à ce qu'il se déclenche qu'une seule fois*/
     if (timeStart === false){
@@ -188,6 +206,11 @@ function verif(bouton){
     }
 }
 
+/**
+ * Cette fonction a pour objectif de check s'il y'a une victoire
+ *
+ * @author          Yassine Zitouni
+ */
 function winner(a, b) {
 	if(JSON.stringify(tabGame) === JSON.stringify(tabResult)){
 		points++;
@@ -202,6 +225,11 @@ function winner(a, b) {
 	}
 }
 
+/**
+ * Cette fonction a pour objectif de gérer le temps
+ *
+ * @author          Yassine Zitouni
+ */
 function timeGame(){
     timeStart = true;
 
@@ -227,6 +255,13 @@ function timeGame(){
     }, 1000);
 }
 
+
+/**
+ * Cette fonction a pour objectif d'afficher la bonne couleur lors
+ * de la progression du temps
+ *
+ * @author          Yassine Zitouni
+ */
 function checkColors(width){
     if (width > 60){
         progressBar.style.background = "green";
@@ -239,6 +274,11 @@ function checkColors(width){
     }
 }
 
+/**
+ * Cette fonction a pour objectif d'ajouter un score vers le serveur
+ *
+ * @author          Yassine Zitouni
+ */
 function scorePost(){
 	const url = "http://localhost/oclock/index.php/game/addScore";
 

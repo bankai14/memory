@@ -8,10 +8,20 @@ class ScoreModel extends CI_Model
     parent::__construct();
   }
 
+	/**
+	 * Cette fonction a pour objectif d'ajouter un score dans la BDD
+	 *
+	 * @author          Yassine Zitouni
+	 */
   function addScore($data){
 	  $this->db->insert('t_scores', $data);
   }
 
+	/**
+	 * Cette fonction a pour objectif de récupérer les scores
+	 *
+	 * @author          Yassine Zitouni
+	 */
   function getScores(){
         $sql = $this->db->select(array('Pseudo', 'Score', 'Date'))
 			->order_by('Score', 'DESC')
